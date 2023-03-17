@@ -1,0 +1,9 @@
+provisioner "remote-exec" {
+  inline = [
+    "sudo apt-get update",
+    "sudo apt-get install -y awscli",
+    "echo '#!/bin/bash\n<your bash script content here>' > script.sh",
+    "chmod +x script.sh",
+    "./script.sh > metrics.txt",
+  ]
+}
